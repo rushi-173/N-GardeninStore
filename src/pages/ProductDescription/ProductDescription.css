@@ -1,0 +1,25 @@
+.product-description-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.prduct-desc-image{
+    width: 40%;
+    padding: 1rem;
+}
+.product-info-container{
+    max-width: 40%;
+    padding: 1rem;
+}
+@media only screen and (max-width: 500px) {
+	.product-description-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .prduct-desc-image{
+        max-width: 100%;
+    }
+    .product-info-container{
+        max-width: 100%;
+    }
+}

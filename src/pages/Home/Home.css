@@ -1,0 +1,58 @@
+.slider-container {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-banner{
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+}
+.offer-banner{
+    width: 100%;
+    margin: 1rem;
+    height: 12rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffa1008c 0%, #f8ff008c 40%, #fffa008c 60%, #61ff008c 100%);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.offer-title{
+    font-family: "Dancing Script";
+	color: var(--color-danger);
+    font-size: 3rem;
+}
+
+.products-container{
+    max-width: 80%;
+}
+
+.view-more-card{
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.slide-container{
+    display: grid;
+    overflow:hidden;
+    width: 100%;
+}
+
+.home-product-cards-container{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.5rem;
+    overflow-x: scroll;
+}
+.home-product-cards-container .card-product{
+    width: 200px;
+}
+@media only screen and (max-width: 500px) {
+	.products-container{
+        width: 100%;
+    }
+}
