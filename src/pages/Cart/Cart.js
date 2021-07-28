@@ -119,9 +119,9 @@ export function Cart() {
 
 	return (
 		<div className="Cart container">
-			<h1>Cart</h1>
+			<center>
+			<h1>Cart</h1></center>
 			<div class="container-column">
-				<h3>Product Cards</h3>
 				<br />
 				{cart.length === 0 ? <p>Your Cart is Empty</p> : <></>}
 				{cart.map((product) => {

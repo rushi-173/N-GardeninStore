@@ -5,12 +5,13 @@ import App from "./App";
 import { CartProvider } from "./contexts/cart-context";
 import { ProductsDataProvider } from "./contexts/products-data-context";
 import { WishlistProvider } from "./contexts/wishlist-context";
-import { ToastProvider } from "./contexts/toast-context";
 import { AuthProvider } from "./contexts/auth-context";
-
+import { ToastProvider } from 'react-toast-notifications';
 ReactDOM.render(
 	<React.StrictMode>
-		<ToastProvider>
+		<ToastProvider autoDismiss
+    autoDismissTimeout={5000}
+    placement="bottom-left">
 			<ProductsDataProvider>
 				<WishlistProvider>
 					<CartProvider>

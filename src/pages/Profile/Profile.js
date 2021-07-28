@@ -1,15 +1,22 @@
 import { useAuth } from "../../contexts/auth-context";
-import { useToast } from "../../contexts/toast-context";
 import "./Profile.css";
+import { useCart } from './../../contexts/cart-context';
+import { useWishlist } from './../../contexts/wishlist-context';
+import { useToasts } from "react-toast-notifications";
 
 export function Profile() {
   const { auth, setAuth } = useAuth();
-  const { showToast } = useToast();
+  const { addToast } = useToasts();
+  const {setCart} = useCart()
+  const {setWishlist} = useWishlist()
 
   function handleLogout() {
     setAuth(null);
     localStorage.clear();
-    showToast("Logged out Successful", "Thanks for visiting!","error");
+    addToast("Logged out Successful",{appearance: "error"});
+    setCart([])
+    setWishlist([])
+
   }
 
   return (

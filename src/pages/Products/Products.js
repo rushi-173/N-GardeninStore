@@ -3,7 +3,7 @@ import {useLocation} from "react-router-dom";
 import "./Products.css";
 import { ProductCard } from "../../components/index";
 import { useProductsData } from "../../contexts/products-data-context";
-import { useToast } from "../../contexts/toast-context";
+import { useToasts } from "react-toast-notifications";
 
 function useQuery() {
 	return new URLSearchParams(useLocation().search);
@@ -15,7 +15,7 @@ export function Products() {
 	const [categories, setCategories] = useState([]);
 	const searchInput = useRef(null);
 	const query = useQuery();
-	const {showToast}  = useToast();
+	const {addToast}  = useToasts();
 	
 	
 	// const [products, setProducts] = useState([]);

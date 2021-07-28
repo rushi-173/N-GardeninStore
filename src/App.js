@@ -23,7 +23,6 @@ import {
 } from "react-router-dom";
 import { fetchData, fetchCartData, fetchWishlistData} from "./helpers";
 import { useProductsData } from "./contexts/products-data-context";
-import { useToast } from "./contexts/toast-context";
 import { useAuth } from "./contexts/auth-context";
 import { useEffect } from "react";
 import { useCart } from "./contexts/cart-context";
@@ -31,7 +30,6 @@ import { useWishlist } from "./contexts/wishlist-context";
 
 function App() {
 	const { productsData, initializeData } = useProductsData();
-	const { toasts } = useToast();
 	const { auth } = useAuth();
 	const {initializeCart} = useCart();
 	const {initializeWishlist} = useWishlist();
@@ -47,7 +45,7 @@ function App() {
 	
 	fetchWishlistData(auth, initializeWishlist);
 		
-	}, []);
+	}, [auth]);
 
 	const PrivateRoute = ({ path, element, children }) => {
 		if (auth) {
@@ -89,7 +87,6 @@ function App() {
         <Route path="*" element={<PageNotFound/>} />
 				</Routes>
 			</Router>
-			<div className="toast-container">{toasts.map((item) => item)}</div>
 		</div>
 	);
 }

@@ -12,9 +12,8 @@ export function Wishlist() {
 
 	return (
 		<div className="Wishlist">
-			<h1>Wishlist</h1>
+			<center><h1>Wishlist</h1></center>
 			<div class="container-column">
-				<h3>Product Cards</h3>
 				<br />
 				<div class="product-cards-container">
 					{wishlist.map((product) => {

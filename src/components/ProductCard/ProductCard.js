@@ -4,9 +4,10 @@ import "./ProductCard.css";
 import { Link, useNavigate, Navigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../contexts/auth-context";
-import { useToast } from "../../contexts/toast-context";
+
 import { useEffect, useState } from "react";
 import Loader from "react-loader-spinner";
+import { useToasts } from "react-toast-notifications";
 
 const AddToCartButton = ({ product }) => {
 	const { addToCart, isInCart, cart, setCart } = useCart();
@@ -16,6 +17,7 @@ const AddToCartButton = ({ product }) => {
 	useEffect(() => {
 		setStatusInCart(isInCart(product._id));
 	}, [cart]);
+	const { addToast } = useToasts();
 
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -39,8 +41,14 @@ const AddToCartButton = ({ product }) => {
 			);
 			console.log(res);
 			setCart(res.data.cart);
+			addToast(`Updated the Cart`, {
+				appearance: "success"
+			});
 		} catch (err) {
 			console.log(err);
+			addToast(`Something error occurred`, {
+				appearance: "error"
+			});
 		}
 		setIsLoading(false);
 	}
@@ -94,6 +102,8 @@ const AddToWishlistButton = ({ product }) => {
 	const { auth } = useAuth();
 	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState(false);
+	
+	const { addToast } = useToasts();
 
 	async function toggleWishlistHandler(product) {
 		setIsLoading(true);
@@ -111,8 +121,14 @@ const AddToWishlistButton = ({ product }) => {
 			);
 			console.log(res);
 			setWishlist(res.data.wishlist);
+			addToast(`Updated the Wishlist`, {
+				appearance: "success"
+			});
 		} catch (err) {
 			console.log(err);
+			addToast(`Some error occured`, {
+				appearance: "error"
+			});
 		}
 		setIsLoading(false);
 	}

@@ -2,15 +2,15 @@ import "./Login.css";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../contexts/auth-context";
-import { useToast } from "../../contexts/toast-context";
 import Loader from "react-loader-spinner";
 import axios from "axios";
 import {   useNavigate } from "react-router-dom";
+import { useToasts } from 'react-toast-notifications';
 
 export function Login() {
-  const { auth, showToast } = useToast();
+  const { addToast } = useToasts();
   const [isLoading, setIsLoading] = useState(false);
-  const { setAuth } = useAuth();
+  const { auth, setAuth } = useAuth();
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +33,7 @@ export function Login() {
       if (!res.data.token) {
         setError(res.data);
       } else {
-        showToast("Login Successful","Let's Explore the Shop!", "success");
+        addToast("Login Successful! Let's Explore the Shop!", {appearance: 'success'});
         setAuth(res.data);
         setAuth((prev) => {
           localStorage.setItem("gstore-auth", JSON.stringify(prev));
@@ -49,6 +49,7 @@ export function Login() {
       }
     } catch (err) {
       setIsLoading(false);
+      addToast("err",{appearance: 'error'});
       console.log(err);
     }
   }
