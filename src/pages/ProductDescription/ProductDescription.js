@@ -5,8 +5,6 @@ import "./ProductDescription.css";
 import {
 	Link,
 	useNavigate,
-	Navigate,
-	useLocation,
 	useParams,
 } from "react-router-dom";
 import axios from "axios";
@@ -68,7 +66,6 @@ const AddToCartButton = ({ product }) => {
 						color="#fff"
 						height={10}
 						width={10}
-						color="white"
 					/>
 				</button>
 			) : (
@@ -132,7 +129,6 @@ const AddToWishlistButton = ({ product }) => {
 				<button className="btn btn-info" style={{width:"100%"}}>
 					<Loader
 						type="TailSpin"
-						color="#fff"
 						height={20}
 						width={20}
 						color="#51c84d"

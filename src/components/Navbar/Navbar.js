@@ -115,21 +115,6 @@ export const Navbar = () => {
 					</b>
 				</li>
 				<li className="menu-item">
-					<Link to="/products">Fruit Plants</Link> 
-				</li>
-				<li className="menu-item">
-					<Link to="/products">Flower Plants</Link> 
-				</li>
-				<li className="menu-item">
-					<Link to="/products">Indoor Plants</Link> 
-				</li>
-				<li className="menu-item">
-					<Link to="/products">Gardening Tools</Link> 
-				</li>
-				<li className="menu-item">
-					<Link to="/products">Pots</Link> 
-				</li>
-				<li className="menu-item">
 					<b>
 						<Link to="/offers">Special Offers</Link> 
 					</b>
