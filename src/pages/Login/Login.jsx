@@ -91,15 +91,24 @@ export function Login() {
               "Login"
             )}
           </button>
-          <small className="err-msg">{error}</small>
-          <div className="container-space-between btn-login">
+          <button className="btn btn-secondary btn-login" onClick={(e)=>{
+            e.preventDefault()
+            setEmail("rushi@rushi.com")
+            setPassword("rushi123")
+          }} disabled={isLoading}>
+            
+              Use Test Credentials
+          </button>
+
+          <small className="err-msg" style={{color:"red"}}>{error}</small><br/>
+          <div className="container-center btn-login">
+           
             <Link to="/signup">
               <p>Register Now 🚀</p>
             </Link>
-            <p>🤔 Forgot Password?</p>
           </div>
           <hr color="white" width="100%" className="btn-login" />
-          <br />
+          {/* <br />
           <p>
             <u>Or Login With</u>
           </p>
@@ -115,7 +124,7 @@ export function Login() {
               Google
               <i class="fa fa-google-plus icon-right" aria-hidden="true"></i>
             </button>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
