@@ -169,7 +169,7 @@ export function Signup() {
 					</div>
 					<hr color="white" width="100%" className="btn-Signup" />
 					<br />
-					<p>
+					{/* <p>
 						<u>Or Signup With</u>
 					</p>
 					<div className="container-space-between social-Signup btn-Signup">
@@ -184,7 +184,7 @@ export function Signup() {
 							Google
 							<i class="fa fa-google-plus icon-right" aria-hidden="true"></i>
 						</button>
-					</div>
+					</div> */}
 				</form>
 			</div>
 		</div>
