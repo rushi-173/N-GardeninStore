@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import { useToasts } from 'react-toast-notifications';
+import { useAuth } from "../../contexts/auth-context";
 
 export function Signup() {
 	const [error, setError] = useState("");
@@ -16,6 +17,13 @@ export function Signup() {
 	const [passErr, setPassErr] = useState("");
 	const navigate = useNavigate();
 	const params = useLocation();
+	const { auth, setAuth } = useAuth();
+
+	useEffect(() => {
+		if(auth){
+		  navigate("/")
+		}
+	  }, [auth])
 
 	useEffect(() => {
 		if (password !== repassword) {

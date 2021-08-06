@@ -1,6 +1,6 @@
 import "./Login.css";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/auth-context";
 import Loader from "react-loader-spinner";
 import axios from "axios";
@@ -16,6 +16,11 @@ export function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const params = useLocation();
+  useEffect(() => {
+    if(auth){
+      navigate("/")
+    }
+  }, [auth])
 
   async function handleSignIn(e) {
     e.preventDefault();

@@ -119,11 +119,11 @@ export const Navbar = () => {
 						<Link to="/offers">Special Offers</Link> 
 					</b>
 				</li>
-				<li className="menu-item">
+				{/* <li className="menu-item">
 					<b>
 						<Link to="/knowplants">Know Plants</Link> 
 					</b>
-				</li>
+				</li> */}
 				<li className="menu-item">
 					<b>
 						<Link to="/wishlist">My Wishlist</Link> 
