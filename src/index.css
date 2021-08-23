@@ -32,6 +32,13 @@
 	--color-facebook: #4267b2;
 	--color-twitter: #1da1f2;
 	--color-google: #db4437;
+
+	--success-color: #10b981;
+	--error-color: #dc2626;
+	--link-text-color: #1e40af;
+	--heading-color: #4b5563;
+	--paragraph-color: #6b7280;
+	--bg-color: #e5e7eb;
 }
 
 * {

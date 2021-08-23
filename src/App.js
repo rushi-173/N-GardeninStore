@@ -11,6 +11,7 @@ import {
 	Signup,
 	Profile,
 	PageNotFound,
+	Checkout,
 } from "./pages";
 import {
 	BrowserRouter as Router,
@@ -80,6 +81,9 @@ function App() {
 					</Route>
 					<Route exact path="/">
 						<Home productsData={productsData} />
+					</Route>
+					<Route exact path="/checkout">
+						<Checkout />
 					</Route>
 
 					<Route exact path="/login" element={<Login />} />

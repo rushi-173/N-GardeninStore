@@ -5,6 +5,13 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 	const [cartProductsIds, setCartProductsIds] = useState([]);
+	const [totalCartAmount, setTotalCartAmount] = useState(0);
+
+	useEffect(()=>{
+		setTotalCartAmount(cart.reduce((acc, item)=>{
+			return acc+ (item.quantity*item.price)
+		},0))
+	},[cart])
 
 	useEffect(() => {
 		setCartProductsIds(cart.map((item) => item._id));
@@ -70,6 +77,7 @@ export const CartProvider = ({ children }) => {
 				setCart,
 				isInCart,
 				initializeCart,
+				totalCartAmount
 			}}
 		>
 			{children}
